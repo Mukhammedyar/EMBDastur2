@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+@layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .flex_col {
+    @apply flex flex-col;
+  }
+  .list1-box {
+    @apply mt-10 flex items-start flex-col px-10 gap-5 min-h-[100vh];
+  }
+  .list1-flex-box {
+    @apply flex gap-2 flex-wrap md:flex-nowrap items-start;
+  }
+  .list1-table {
+    @apply shadow-lg border bg-white text-center text-xs md:text-sm font-light dark:border-neutral-500 rounded-lg;
+  }
+  .const-lists-table {
+    @apply shadow-lg border bg-white text-center text-xs font-light dark:border-neutral-500 rounded-lg;
+  }
+  .const-lists-thead {
+    @apply border-b h-[82px] border-gray-300 font-medium dark:border-neutral-500 rounded;
+  }
+  .thead-border {
+    @apply border-neutral-300;
+  }
+  .const-lists-input {
+    @apply w-[100px] h-[30px] md:w-[75px] focus:outline-0 text-xs md:text-sm font-normal pl-2 px-1;
+  }
+  .input-head-thead {
+    @apply border-b text-xs md:text-sm h-[82px] border-gray-300 font-medium dark:border-neutral-500 rounded;
+  }
+  .width-qum {
+    @apply min-w-[100px] md:min-w-[160px];
+  }
+  .width-chang {
+    @apply min-w-[100px] md:min-w-[150px];
+  }
+  .inputs-td {
+    @apply p-0 w-[50px] md:w-[50px] border-r-[1px];
+  }
+  .inputs-input {
+    @apply w-[50px] md:w-[75px] focus:outline-0 text-xs md:text-sm font-medium px-1;
+  }
+  .inputs-last-list {
+    @apply w-[50px] border-r-[1px] md:w-[50px] px-2 text-gray-800 font-medium;
+  }
+}

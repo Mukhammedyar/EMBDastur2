@@ -1,0 +1,10 @@
+.tablerow td {
+  height: 10px;
+}
+.table-row-item {
+  height: 36.7px !important;
+  padding: 0 !important;
+}
+.table-row-last td {
+  height: 33.4px;
+}
