@@ -1,9 +1,4 @@
 import axios from "axios";
-
-<<<<<<< HEAD
-
-=======
->>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
 export const API_URL = "http://localhost:3000/";
 
 export const getData = async (link) => {

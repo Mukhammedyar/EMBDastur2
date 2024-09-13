@@ -16,7 +16,6 @@ export default function Results({values1}) {
         dispatch(fizikQumSuccess(results[2]));
         dispatch(fizikLoySuccess(results[3]));
     }, [ values1, length, dispatch])
-
   return (
     <div>
         <p>Natiyja</p>
