@@ -1,18 +1,30 @@
 import React, { useEffect, useState } from 'react'
+<<<<<<< HEAD
 // import { db } from '../../config/firebase'
 // import { collection, doc, getDocs, setDoc } from 'firebase/firestore'
+=======
+import { db } from '../../config/firebase'
+import { collection, doc, getDocs, setDoc } from 'firebase/firestore'
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
 import { useSelector } from 'react-redux'
 import { dataFetching } from '../../Service'
 
 export default function ShorYuvishCalculing() {
     let [shorYuvishQiymat, setShorYuvishQiymat] = useState([]) 
+<<<<<<< HEAD
+=======
+    const { shorlanishDarajasi } = useSelector(state => state.valuesList3)
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
 
     useEffect(() => {
         const shorYuvishCalculing = async () => {
             let shorYuvishArray = []
             const mexnikTarkibData = await dataFetching('mexanikTarkibJami', 'getData')
+<<<<<<< HEAD
             const {data} = await dataFetching('shorlanishDarajasi', 'getData')
             const shorlanishDarajasi = data.data
+=======
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
             const mexanikTarkib = mexnikTarkibData.data.data
             
             try {
@@ -87,20 +99,32 @@ export default function ShorYuvishCalculing() {
                     }
                 }
                 shorYuvishArray = shorYuvish()
+<<<<<<< HEAD
                 // await setDoc(doc(db, "List3Results", "ShorYuvushQiymatlar"), { data: shorYuvishArray });
                 await dataFetching('shorYuvishQiymat', 'updateData', {id: 0, data: shorYuvishArray}, 0);
 
                 const getShoryuvish = await dataFetching('shorYuvishQiymat', 'getData')
                 setShorYuvishQiymat(shorYuvishArray);
 
+=======
+                await setDoc(doc(db, "List3Results", "ShorYuvushQiymatlar"), { data: shorYuvishArray });
+                await dataFetching('shorYuvishQiymat', 'updateData', {id: 0, data: shorYuvishArray}, 0);
+
+                const getShoryuvish = await dataFetching('shorYuvishQiymat', 'getData')
+                setShorYuvishQiymat(getShoryuvish.data.data);
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
             } catch (error) {
               console.log(error); 
             }
         }
         shorYuvishCalculing()
+<<<<<<< HEAD
     }, [setShorYuvishQiymat])
 
 
+=======
+    },[db, shorlanishDarajasi])
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
 
   return (
     <div className='flex justify-center'>

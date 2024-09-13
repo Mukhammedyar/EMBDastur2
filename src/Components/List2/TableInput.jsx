@@ -16,7 +16,11 @@ export default function TableInput({ handleChange, jadvalQiymatlari, setJadvalQi
                 const {data} = await dataFetching("valuesList2", 'getData')
                 const resValuesList2 = await dataFetching("valuesNatiyjaList2", 'getData')
 
+<<<<<<< HEAD
                 let valuesList2 = data.data.slice(0, length).map(row => row.map(val => val ?? ''))
+=======
+                let valuesList2 = data.data.slice(0, length)
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
                 let newResult = resValuesList2.data.data.slice(0, length) 
                 setJadvalQiymatlari(valuesList2);
                 setNatiyjaValues(newResult)
@@ -39,7 +43,11 @@ export default function TableInput({ handleChange, jadvalQiymatlari, setJadvalQi
                         <input
                             type={"number"}
                             step={0.1}
+<<<<<<< HEAD
                             value={qiymat === null || qiymat === undefined ? '' : qiymat}
+=======
+                            value={qiymat == 0 ? null : qiymat}
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
                             placeholder={"0"} 
                             onChange={(event) => handleChange(rowIndex, colIndex, event)}
                             className={`
@@ -52,7 +60,11 @@ export default function TableInput({ handleChange, jadvalQiymatlari, setJadvalQi
                             <tbody>
                                 <tr>
                                     <td className='bg-slate-200 text-blue-800 w-[100px] md:w-[80px] text-start px-2 font-medium'>
+<<<<<<< HEAD
                                        {natijaValues[rowIndex]?.[colIndex]?.toFixed(2) ?? ''}
+=======
+                                       {natijaValues[rowIndex][colIndex]?.toFixed(2)}
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
                                     </td>
                                 </tr>
                             </tbody>

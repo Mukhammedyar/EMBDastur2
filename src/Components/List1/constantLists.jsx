@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { list1 } from '../../API/tableList'
+<<<<<<< HEAD
 import { useSelector } from 'react-redux'
 import { dataFetching } from '../../Service'
 
@@ -16,6 +17,25 @@ export default function ConstLists() {
             (parseFloat(event.target.value) < 101 && parseFloat(event.target.value) > -2) ? 
             parseFloat(event.target.value) : parseFloat(event.target.value);
         newArray[rowIndex][colIndex] = value;
+=======
+import { qqalList1 } from '../../API/tableList2'
+import { useDispatch, useSelector } from 'react-redux'
+import { collection, doc, getDocs, setDoc } from 'firebase/firestore'
+import { db } from '../../config/firebase'
+import { dataFetching } from '../../Service'
+
+
+export default function ConstLists() {
+    const [listData, setListData] = useState(list1)
+    const { length } = useSelector(state => state.tableLength)
+    const [values , setValues] = useState(Array(length).fill(Array(2).fill(0)))
+    const [results , setResults] = useState([])
+    const [resultsSum , setResultsSum] = useState([])
+
+    const handleInputChange = async (rowIndex, colIndex, event) => {
+        const newArray = values.map(row => [...row]);
+        event.target.value < 101 && event.target.value > -2 ? newArray[rowIndex][colIndex] = parseFloat(event.target.value) : parseFloat(event.target.value); 
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
         setValues(newArray);
         try {
             await dataFetching('constValuesList1', 'updateData', {id: 0, data: newArray }, 0 )
@@ -50,7 +70,11 @@ export default function ConstLists() {
                 setValues(dataLength)
                 calculateResult(dataLength)
            } catch (error) {
+<<<<<<< HEAD
                 console.log(error.message);
+=======
+                console.log(error);
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
            }
         }
         dataGet()
@@ -104,7 +128,11 @@ export default function ConstLists() {
                                 <input
                                     type="number"
                                     step={1}
+<<<<<<< HEAD
                                     value={qiymat}
+=======
+                                    value={qiymat === 0 ? null : qiymat}
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
                                     onChange={(event) => handleInputChange(rowIndex, colIndex, event)}
                                     className={`const-lists-input ${rowIndex % 2 == 1 ? "bg-gray-100" : "bg-white "}`}/>
                             </td>

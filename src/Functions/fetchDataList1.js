@@ -22,6 +22,10 @@ export const fetchData = async (setResults, dispatch, length) => {
     jamiPerArray = Array(8).fill(0), //Jami komponent ushin value saqlaw ushin
     jamiQiymatlar = Array(10).fill(0), // list1 astindagi jami fizikloy jami hami fizik qum jaminin valueslerdi saqlaw ushin
     qatlamQalinligiArray = qatlamQalingi.slice(0, length),
+<<<<<<< HEAD
+=======
+    qatlamQalinligiJamiArray = qatlamQalingi,
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
     mexanikTarkib = Array(8).fill(""); //mexanik tarkib values saqlaw ushin
   let mexanikTarkibJami = ""; //mexanik tarkib jami value saqlaw ushin
   let fizikQumVar = 0,
@@ -30,7 +34,10 @@ export const fetchData = async (setResults, dispatch, length) => {
     fizikQumJamiVar = 0,
     fizikLoyJamiVar = 0,
     XajmOgirligiJami = 0,
+<<<<<<< HEAD
     qatlamQalinligiJami = 0,
+=======
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
     JamiPercentVar = 0,
     valuesInputWithOutXO = Array(length).fill(0), //values Input without Xajm ogirligi alohida arrayga otkazish
     xajmOgirligiVar = Array(length).fill(0); //xajm ogirligini alohida arrayga otkazish
@@ -41,8 +48,11 @@ export const fetchData = async (setResults, dispatch, length) => {
         let arr = rows.slice(7, 8);
         xajmOgirligiVar[i] = arr[0];
       });
+<<<<<<< HEAD
       qatlamQalinligiJami += parseFloat(qatlamQalinligiArray[index])
 
+=======
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
 
       valuesInputArray.map((rows, i) => {
         let arr = rows.slice(0, 7);
@@ -92,7 +102,10 @@ export const fetchData = async (setResults, dispatch, length) => {
           parseFloat(xajmOgirligiVar[i]) *
           parseFloat(qatlamQalinligiArray[i]) *
           fizikLoyArray[i];
+<<<<<<< HEAD
 
+=======
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
         // input astindagi jami qiymatlardi esaplaydi
         XajmOgirligiJami +=
           parseFloat(qatlamQalinligiArray[i]) * xajmOgirligiVar[i];
@@ -104,14 +117,24 @@ export const fetchData = async (setResults, dispatch, length) => {
       inputValuesVar = inputValuesVar / XajmOgirligiJami; // cikl aqirindagi boliw ameli
       jamiQiymatlar[index] = inputValuesVar;
       jamiQiymatlar[7] =
+<<<<<<< HEAD
         XajmOgirligiJami / parseFloat(qatlamQalinligiJami);
+=======
+        XajmOgirligiJami / parseFloat(qatlamQalinligiJamiArray);
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
       XajmOgirligiJami = 0;
       inputValuesVar = 0;
 
       fizikQumJamiVar /=
+<<<<<<< HEAD
         parseFloat(qatlamQalinligiJami) * parseFloat(jamiQiymatlar[7]);
       fizikLoyJamiVar /=
         parseFloat(qatlamQalinligiJami) * parseFloat(jamiQiymatlar[7]);
+=======
+        parseFloat(qatlamQalinligiJamiArray) * parseFloat(jamiQiymatlar[7]);
+      fizikLoyJamiVar /=
+        parseFloat(qatlamQalinligiJamiArray) * parseFloat(jamiQiymatlar[7]);
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
 
       jamiQiymatlar[9] = fizikQumJamiVar;
       jamiQiymatlar[10] = fizikLoyJamiVar;

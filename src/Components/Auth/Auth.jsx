@@ -14,6 +14,7 @@ function Auth() {
         e.preventDefault()
         dispatch(signUserStart())
         try {
+<<<<<<< HEAD
           // if (value.login === "admin" && value.password === "admin1234") {
           // } else {
           //   setValue({ login: "", password: "" })
@@ -21,6 +22,14 @@ function Auth() {
           navigate('/list1')
           dispatch(signUserSuccess()) 
 
+=======
+          if (value.login === "admin" && value.password === "admin1234") {
+            dispatch(signUserSuccess()) 
+            navigate('/list1')
+          } else {
+            setValue({ login: "", password: "" })
+          }
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
         } catch (error) {
             console.log(error);
         }
@@ -47,7 +56,11 @@ function Auth() {
         <Button
           className={"bg-blue-500 text-white disabled:bg-blue-300 font-medium rounded-md mt-4"}
           onClick={signInHandler}
+<<<<<<< HEAD
           // disabled= {value.password == "" || value.password=="" ? true : false}
+=======
+          disabled= {value.password == "" || value.password=="" ? true : false}
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
         >
           SignIn
         </Button>

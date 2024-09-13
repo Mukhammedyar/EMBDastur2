@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+=======
+import { collection, getDocs } from 'firebase/firestore';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { db } from '../../config/firebase';
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
 import { valueSetSuccess } from '../../Reducer/ValuesList1';
 import { dataFetching } from '../../Service';
 
@@ -34,7 +41,11 @@ export default function Inputs({handleInputChange, values1, setValues1}) {
                 <td key={colIndex} className={`inputs-td ${rowIndex % 2 == 1 ? "bg-gray-100" : "bg-white"}`}>
                   <input
                     type="number"
+<<<<<<< HEAD
                     value={qiymat === 0 || qiymat === null ? '' : qiymat}
+=======
+                    value={qiymat == 0 ? null : qiymat}
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
                     step={1}
                     onChange={(event) => handleInputChange(rowIndex, colIndex, event)}
                     className={`${rowIndex % 2 == 1 ? "bg-gray-100" : "bg-white"} inputs-input`}

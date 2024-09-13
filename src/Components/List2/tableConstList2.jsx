@@ -49,7 +49,10 @@ export default function TableConst() {
             <tr className='bg-gray-200 border-b border-neutral-400 font-normal'>
                 {header[0].map((item, index) => (
                     <th
+<<<<<<< HEAD
                         key={index}
+=======
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
                         rowSpan={index == 0 || index == 2 ? 2 : 1}
                         colSpan={index !== 0 ? 2 : 1}
                         scope="col"
@@ -61,7 +64,10 @@ export default function TableConst() {
             <tr className='bg-gray-200'>
               {header[1].map((item, index) => (
                 <th
+<<<<<<< HEAD
                     key={index}
+=======
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
                     scope="col"
                     className="border-r px-2 font-medium border-neutral-400">
                     {item}
@@ -72,6 +78,7 @@ export default function TableConst() {
         <tbody className='text-xs'>
             {values.map((item, index) => (
                 <tr key={index} className={`border-b font-normal tablerow h-[36.6px] ${index % 2 == 1 ? "bg-gray-100" : "bg-white"}`}>
+<<<<<<< HEAD
                     <th className='border-r px-1 w-[30px]'>{listData[index].id}</th>
                     <td className='border-r p-0'>{values[index][0]}</td>
                     <td className='border-r p-0'>{values[index][1]}</td>
@@ -84,6 +91,18 @@ export default function TableConst() {
                             className={`text-xs font-medium px-1 w-[100px] h-[30px] md:w-[95px] focus:outline-0 md:text-sm ${index % 2 == 1 ? "bg-gray-100" : "bg-white"} `}
                         />
                     </td>
+=======
+                <th className='border-r px-1 w-[30px]'>{listData[index].id}</th>
+                <td className='border-r p-0'>{values[index][0]}</td>
+                <td className='border-r p-0'>{values[index][1]}</td>
+                <input
+                    type="number"
+                    step={0.1}
+                    value={valuesList2[index]}
+                    onChange={(event) => handleInputChange(index, event)}
+                    className={`text-xs font-medium px-1 w-[100px] h-[30px] md:w-[95px] focus:outline-0 md:text-sm ${index % 2 == 1 ? "bg-gray-100" : "bg-white"} `}
+                />
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
                 </tr> 
             ))}
         </tbody>

@@ -10,15 +10,24 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "server": "json-server -w src/DataBase/db.json --port 3000"
+<<<<<<< HEAD
+=======
+
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
     "@reduxjs/toolkit": "^2.2.3",
+<<<<<<< HEAD
     "axios": "^1.7.7",
     "boxicons": "^2.1.4",
     "concurrently": "^9.0.1",
     "firebase": "^10.9.0",
     "json-server": "^1.0.0-beta.2",
+=======
+    "boxicons": "^2.1.4",
+    "firebase": "^10.9.0",
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.0",
@@ -29,13 +38,22 @@
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react-swc": "^3.5.0",
+<<<<<<< HEAD
     "autoprefixer": "^10.4.20",
+=======
+    "autoprefixer": "^10.4.17",
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
     "eslint": "^8.56.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+<<<<<<< HEAD
     "postcss": "^8.4.45",
     "tailwindcss": "^3.4.11",
+=======
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
     "vite": "^5.1.4"
   }
 }

@@ -1,5 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux'
+<<<<<<< HEAD
 import React, {  useEffect, useState } from 'react'
+=======
+import { list3 } from '../../API/tableList'
+import React, {  useEffect, useState } from 'react'
+import { collection, doc, getDocs, setDoc } from 'firebase/firestore'
+import { db } from '../../config/firebase'
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
 import { shorlanishDarajasiSuccess } from '../../Reducer/List3Values'
 import { dataFetching } from '../../Service'
 
@@ -18,8 +25,11 @@ export default function List3Result({ jadvalQiymatlari }) {
                 const values2Data = await dataFetching('valuesList2', 'getData')
                 const { data } = await dataFetching('zichQoldiqJami', 'getData')
                 const tigizQoldiqJami = data.data
+<<<<<<< HEAD
                 const shorlanishDarajasiData = await dataFetching('shorlanishDarajasi', 'getData')
 
+=======
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
 
                 let valueInput = values2Data.data.data.slice(0, length)
                 let newdata = Array(length).fill(Array(6).fill(0))
@@ -48,6 +58,7 @@ export default function List3Result({ jadvalQiymatlari }) {
                         : tigizQoldiqJami > 50 && tigizQoldiqJami <= 100 ? "Kuchsiz shorlangan" 
                         : tigizQoldiqJami > 100 && tigizQoldiqJami <= 200 ? "O'rtacha shorlangan"
                         : tigizQoldiqJami > 200 && tigizQoldiqJami <= 300 ? "Kuchli shorlangan"
+<<<<<<< HEAD
                         : tigizQoldiqJami > 300 ? "Juda kuchli shorlangan" : "--"
                 }
                 
@@ -66,12 +77,34 @@ export default function List3Result({ jadvalQiymatlari }) {
                         typeArray,typePer,shorlanishDarajasiData.data.data
                     ]);  
                 }
+=======
+                        : tigizQoldiqJami > 300 ? "Juda kuchli shorlangan" : "--/--"
+                }
+                
+                const shorlanishDarajasiQuery = getTigizStatus(tigizQoldiqJami)
+                dispatch(shorlanishDarajasiSuccess(shorlanishDarajasiQuery))
+                
+                await dataFetching('tipList3', 'updateData', {id: 0, data: typeArray});
+                await dataFetching('tipPercentList3', 'updateData', {id: 0, data: typePer});
+                await dataFetching('shorlanishDarajasi', 'updateData', {id: 0, data: shorlanishDarajasiQuery});
+
+                setResults([
+                    typeArray,typePer,shorlanishDarajasiQuery
+                ]);
+                // console.log(tigizQoldiqJami);
+
+                
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
             } catch (error) {
                 console.log(error);
             }
         }
         fetchData()
+<<<<<<< HEAD
     }, [ jadvalQiymatlari])
+=======
+    }, [db, jadvalQiymatlari])
+>>>>>>> be6bfb195b9bfe87427cf1e6f3cfc4a1b9b5ccdb
     
 
   return (
